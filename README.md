@@ -11,11 +11,10 @@ A Python-based utility that automatically suggests words containing specific syl
 
 ## 🛠️ Requirements
 - Python 3.8+
-- Dependencies: `easyocr`, `mss`, `numpy`, `pyautogui`, `keyboard`, `tkinter`
 
 Install dependencies using:
 ```bash
-pip install easyocr mss numpy pyautogui keyboard
+pip install -r requirements.txt
 ```
 
 ## 🚀 How to Use

@@ -1,0 +1,5 @@
+easyocr
+mss
+numpy
+pyautogui
+keyboard
