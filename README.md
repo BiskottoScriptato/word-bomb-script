@@ -1,4 +1,4 @@
-# Word Suggestion Bot (OCR-based)
+# Word Suggestion Bot (OCR-based - Created for Word Bomb)
 
 A Python-based utility that automatically suggests words containing specific syllables by reading them directly from your screen using OCR. Designed for word games like BombParty.
 
