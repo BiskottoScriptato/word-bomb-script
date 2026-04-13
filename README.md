@@ -40,6 +40,20 @@ By default, the script is set to **Italian**. To change the OCR language:
    ```
 3. Change `['it']` to your desired language code (e.g., `['en']` for English, `['fr']` for French).
 
+### Customizing Hotkeys
+You can change the keys used to trigger the suggestions:
+1. Open `script.py`.
+2. Locate the `CONFIGURATION` section near the top.
+3. Change `HOT_KEY_1` and `HOT_KEY_2` values (e.g., to `'f1'`, `'f2'`, or any other valid keyboard character).
+
+### Adjusting Typing Speed
+To make the bot type faster or slower:
+1. Open `script.py`.
+2. Locate the `CONFIGURATION` section near the top.
+3. Adjust `TYPING_DELAY_MIN` and `TYPING_DELAY_MAX`.
+   - **Smaller numbers** = Faster typing.
+   - **Larger numbers** = Slower, more human-like typing.
+
 ### Wordlists
 - The **provided `wordlist.txt` is in Italian**.
 - If you switch languages, you **must replace `wordlist.txt`** with a wordlist corresponding to that language.

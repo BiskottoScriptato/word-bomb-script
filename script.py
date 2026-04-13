@@ -9,6 +9,18 @@ import random
 
 pyautogui.FAILSAFE = False
 
+# --- CONFIGURATION (Adjust as needed) ---
+# HOTKEYS: Change '0' and '9' to your preferred keys
+HOTKEY_1 = '0'
+HOTKEY_2 = '9'
+
+# TYPING SPEED: 
+# Increase for safer/slower typing, decrease for faster typing
+TYPING_DELAY_MIN = 0.002
+TYPING_DELAY_MAX = 0.005
+SAME_CHAR_DELAY = 0.01  # Delay when the next character is the same
+
+
 # --- Wordlist Loading ---
 def load_wordlist(filename):
     """Loads a set of words from a text file, one word per line."""
@@ -127,7 +139,9 @@ def type_simulated_word(word):
     """Types the word with human-like delays."""
     for i, ch in enumerate(word):
         pyautogui.write(ch)
-        time.sleep(0.01 if i + 1 < len(word) and word[i + 1] == ch else random.uniform(0.002, 0.005))
+        # Use a longer delay if the next character is the same (to ensure game registration)
+        delay = SAME_CHAR_DELAY if i + 1 < len(word) and word[i + 1] == ch else random.uniform(TYPING_DELAY_MIN, TYPING_DELAY_MAX)
+        time.sleep(delay)
     pyautogui.press('enter')
 
 # --- MAIN ---
@@ -161,11 +175,11 @@ def main():
             ready_words[1] = ""
             print(f"✍️ Second word used: {word}")
 
-    keyboard.on_press_key('0', type_first)
-    keyboard.on_press_key('9', type_second)
+    keyboard.on_press_key(HOTKEY_1, type_first)
+    keyboard.on_press_key(HOTKEY_2, type_second)
 
     print("🚀 Script running! Place the red box over the syllable area.")
-    print("Keys: '0' for the first suggestion, '9' for the second suggestion.")
+    print(f"Keys: '{HOTKEY_1}' for the first suggestion, '{HOTKEY_2}' for the second suggestion.")
 
     try:
         while True:
